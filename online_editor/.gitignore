@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+ENV/
+env/
+venv/
+Pipfile
+Pipfile.lock
+
+# macOS
+.DS_Store
+
+# Django
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+*.so
+
+# Test result files
+*.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.egg-info/
+
+# IDE-specific
+.idea/
+.vscode/
+*.iml
+
+# Deployment
+*.pid
+*.gz
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Files generated during execution
+temp_code.txt

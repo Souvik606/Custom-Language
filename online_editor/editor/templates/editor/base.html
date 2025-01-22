@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Code Editor</title>
+    </head>
+    <body>
+        <h1>Run Your Code</h1>
+        <form id="code-form">
+            <textarea id="code-input" name="code" rows="10" cols="50"></textarea
+            ><br />
+            <button type="button" onclick="submitCode()">Run</button>
+        </form>
+        <pre id="output"></pre>
+        <script>
+            async function submitCode() {
+                const code = document.getElementById("code-input").value;
+                const response = await fetch("/run/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: new URLSearchParams({ code }),
+                });
+                const result = await response.json();
+                document.getElementById("output").textContent =
+                    result.stdout || result.error;
+            }
+        </script>
+    </body>
+</html>
